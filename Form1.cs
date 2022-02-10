@@ -10,11 +10,25 @@ using System.Windows.Forms;
 
 namespace Timer
 {
-    public partial class Form1 : Form
+    public partial class SetUp : Form
     {
-        public Form1()
+        public SetUp()
         {
             InitializeComponent();
+        }
+
+        private void SetUp_Load(object sender, EventArgs e)
+        {
+            for(int i = 0; i<24; i++)
+            {
+                this.comboBoxHours.Items.Add(i.ToString());
+            }
+            this.comboBoxHours.SelectedIndex = 0;
+            for(int i = 0; i<60; i++)
+            {
+                this.comboBoxMinutes.Items.Add(i.ToString());
+            }
+            this.comboBoxMinutes.SelectedIndex = 1;
         }
     }
 }
