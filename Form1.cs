@@ -38,15 +38,17 @@ namespace Timer
         private void buttonStart_Click(object sender, EventArgs e)
         {
 
-
             hoursToMinutes = int.Parse(this.comboBoxHours.SelectedItem.ToString())*60;
             totalMinutes = hoursToMinutes + int.Parse(this.comboBoxMinutes.SelectedItem.ToString());
 
 
-            Countdown c = new Countdown();
+            Countdown c = new Countdown(totalMinutes,textBox.Text.ToString());
             c.FormBorderStyle = FormBorderStyle.None;
             c.WindowState = FormWindowState.Maximized;
             c.TopMost = true;
+
+            
+
 
             c.ShowDialog();
         }

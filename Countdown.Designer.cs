@@ -34,6 +34,8 @@ namespace Timer
             this.labelTime = new System.Windows.Forms.Label();
             this.labelRemainTime = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.flash = new System.Windows.Forms.Timer(this.components);
+            this.blink = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // buttonClose
@@ -52,7 +54,8 @@ namespace Timer
             this.labelTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelTime.AutoSize = true;
             this.labelTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTime.Location = new System.Drawing.Point(181, 152);
+            this.labelTime.ForeColor = System.Drawing.Color.Black;
+            this.labelTime.Location = new System.Drawing.Point(181, 157);
             this.labelTime.Name = "labelTime";
             this.labelTime.Size = new System.Drawing.Size(98, 108);
             this.labelTime.TabIndex = 1;
@@ -63,7 +66,7 @@ namespace Timer
             this.labelRemainTime.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelRemainTime.AutoSize = true;
             this.labelRemainTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRemainTime.Location = new System.Drawing.Point(372, 179);
+            this.labelRemainTime.Location = new System.Drawing.Point(189, 28);
             this.labelRemainTime.Name = "labelRemainTime";
             this.labelRemainTime.Size = new System.Drawing.Size(416, 55);
             this.labelRemainTime.TabIndex = 2;
@@ -71,7 +74,20 @@ namespace Timer
             // 
             // timer
             // 
+            this.timer.Interval = 60000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // flash
+            // 
+            this.flash.Enabled = true;
+            this.flash.Interval = 1000;
+            this.flash.Tick += new System.EventHandler(this.flash_Tick);
+            // 
+            // blink
+            // 
+            this.blink.Enabled = true;
+            this.blink.Interval = 1000;
+            this.blink.Tick += new System.EventHandler(this.blink_Tick);
             // 
             // Countdown
             // 
@@ -94,5 +110,7 @@ namespace Timer
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.Label labelRemainTime;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Timer flash;
+        private System.Windows.Forms.Timer blink;
     }
 }
