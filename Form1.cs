@@ -30,5 +30,14 @@ namespace Timer
             }
             this.comboBoxMinutes.SelectedIndex = 1;
         }
+
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+            Countdown c = new Countdown();
+            c.FormBorderStyle = FormBorderStyle.None;
+            c.WindowState = FormWindowState.Maximized;
+            c.TopMost = true;
+            c.ShowDialog();
+        }
     }
 }
