@@ -29,7 +29,11 @@ namespace Timer
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.labelTime = new System.Windows.Forms.Label();
+            this.labelRemainTime = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // buttonClose
@@ -43,20 +47,52 @@ namespace Timer
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
+            // labelTime
+            // 
+            this.labelTime.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelTime.AutoSize = true;
+            this.labelTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTime.Location = new System.Drawing.Point(181, 152);
+            this.labelTime.Name = "labelTime";
+            this.labelTime.Size = new System.Drawing.Size(98, 108);
+            this.labelTime.TabIndex = 1;
+            this.labelTime.Text = "0";
+            // 
+            // labelRemainTime
+            // 
+            this.labelRemainTime.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelRemainTime.AutoSize = true;
+            this.labelRemainTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRemainTime.Location = new System.Drawing.Point(372, 179);
+            this.labelRemainTime.Name = "labelRemainTime";
+            this.labelRemainTime.Size = new System.Drawing.Size(416, 55);
+            this.labelRemainTime.TabIndex = 2;
+            this.labelRemainTime.Text = "minutes remaining";
+            // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
             // Countdown
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelRemainTime);
+            this.Controls.Add(this.labelTime);
             this.Controls.Add(this.buttonClose);
             this.Name = "Countdown";
             this.Text = "Countdown";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.Label labelTime;
+        private System.Windows.Forms.Label labelRemainTime;
+        private System.Windows.Forms.Timer timer;
     }
 }

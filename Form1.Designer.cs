@@ -30,7 +30,7 @@ namespace Timer
         private void InitializeComponent()
         {
             this.title = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox = new System.Windows.Forms.TextBox();
             this.comboBoxHours = new System.Windows.Forms.ComboBox();
             this.comboBoxMinutes = new System.Windows.Forms.ComboBox();
             this.labelHours = new System.Windows.Forms.Label();
@@ -50,12 +50,12 @@ namespace Timer
             this.title.Text = "Countdown Timer";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // textBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(250, 144);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(293, 20);
-            this.textBox1.TabIndex = 1;
+            this.textBox.Location = new System.Drawing.Point(250, 144);
+            this.textBox.Name = "textBox";
+            this.textBox.Size = new System.Drawing.Size(293, 20);
+            this.textBox.TabIndex = 1;
             // 
             // comboBoxHours
             // 
@@ -130,7 +130,7 @@ namespace Timer
             this.Controls.Add(this.labelHours);
             this.Controls.Add(this.comboBoxMinutes);
             this.Controls.Add(this.comboBoxHours);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox);
             this.Controls.Add(this.title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "SetUp";
@@ -144,7 +144,7 @@ namespace Timer
         #endregion
 
         private System.Windows.Forms.Label title;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox;
         private System.Windows.Forms.ComboBox comboBoxHours;
         private System.Windows.Forms.ComboBox comboBoxMinutes;
         private System.Windows.Forms.Label labelHours;

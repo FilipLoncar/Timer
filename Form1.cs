@@ -19,7 +19,8 @@ namespace Timer
 
         private void SetUp_Load(object sender, EventArgs e)
         {
-            for(int i = 0; i<24; i++)
+
+            for (int i = 0; i<24; i++)
             {
                 this.comboBoxHours.Items.Add(i.ToString());
             }
@@ -31,12 +32,22 @@ namespace Timer
             this.comboBoxMinutes.SelectedIndex = 1;
         }
 
+        private int totalMinutes;
+        private int hoursToMinutes;
+
         private void buttonStart_Click(object sender, EventArgs e)
         {
+
+
+            hoursToMinutes = int.Parse(this.comboBoxHours.SelectedItem.ToString())*60;
+            totalMinutes = hoursToMinutes + int.Parse(this.comboBoxMinutes.SelectedItem.ToString());
+
+
             Countdown c = new Countdown();
             c.FormBorderStyle = FormBorderStyle.None;
             c.WindowState = FormWindowState.Maximized;
             c.TopMost = true;
+
             c.ShowDialog();
         }
     }
