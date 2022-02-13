@@ -51,26 +51,28 @@ namespace Timer
             // 
             // labelTime
             // 
-            this.labelTime.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelTime.AutoSize = true;
+            this.labelTime.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTime.ForeColor = System.Drawing.Color.Black;
-            this.labelTime.Location = new System.Drawing.Point(181, 157);
+            this.labelTime.Location = new System.Drawing.Point(60, 159);
             this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(98, 108);
+            this.labelTime.Size = new System.Drawing.Size(650, 108);
             this.labelTime.TabIndex = 1;
             this.labelTime.Text = "0";
+            this.labelTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelRemainTime
             // 
-            this.labelRemainTime.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.labelRemainTime.AutoSize = true;
-            this.labelRemainTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRemainTime.Location = new System.Drawing.Point(189, 28);
+            this.labelRemainTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelRemainTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRemainTime.Location = new System.Drawing.Point(12, 28);
             this.labelRemainTime.Name = "labelRemainTime";
-            this.labelRemainTime.Size = new System.Drawing.Size(416, 55);
+            this.labelRemainTime.Size = new System.Drawing.Size(776, 76);
             this.labelRemainTime.TabIndex = 2;
             this.labelRemainTime.Text = "minutes remaining";
+            this.labelRemainTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timer
             // 
@@ -100,7 +102,6 @@ namespace Timer
             this.Name = "Countdown";
             this.Text = "Countdown";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

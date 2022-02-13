@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Media;
+
 namespace Timer
 {
     public partial class Countdown : Form
@@ -23,13 +25,28 @@ namespace Timer
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (totalMinutesF2 != 0)
+            {
+                string mess = "Are you sure you want to close timer? ";
+                string caption = "Warinig!";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+
+                DialogResult r;
+
+                r = MessageBox.Show(mess, caption, buttons);
+
+                if (r == System.Windows.Forms.DialogResult.Yes)
+                    this.Close();
+            }
+            else
+                this.Close();
         }
 
         int totalMinutesF2;
 
         private void timer_Tick(object sender, EventArgs e)
         {
+            
             if (totalMinutesF2 > 1)
             {
                 totalMinutesF2--;
@@ -37,45 +54,44 @@ namespace Timer
             }
             else
             {
+                --totalMinutesF2;
+                
                 timer.Stop();
+                
                 labelTime.Text = "Time is up!";
+                SystemSounds.Exclamation.Play();
+
+                //SystemSounds.Beep.Play();
             }
         }
 
-        /*
+       
         private void flash_Tick(object sender, EventArgs e)
         {
             /*
-            if (labelTime.ForeColor == Color.Black)
-                labelTime.ForeColor = Color.Red;
-            else //if (labelTime.BackColor == Color.Red)
-                labelTime.ForeColor = Color.Black;
-            */
-          /*  while (totalMinutesF2 >= 5)
+            if (totalMinutesF2 <= 5)
             {
+                Random random = new Random();
+                int a = random.Next(0, 255);
+                int b = random.Next(0, 255);
+                int c = random.Next(0, 255);
 
-                if (labelTime.ForeColor == Color.Black)
-                {
-                    labelTime.ForeColor = Color.Red;
-                    blink.Start();
-                    flash.Stop();
-                }
-            }  
-          
+                labelTime.ForeColor = System.Drawing.Color.FromArgb(a, b, c);
+
+            }
+            */
         }
 
         private void blink_Tick(object sender, EventArgs e)
-        {*/
-            /*
-            labelTime.ForeColor = Color.Red;
-            */
-            /*
-            if (labelTime.ForeColor == Color.Red)
+        {
+            if (totalMinutesF2 <= 5)
             {
-                labelTime.ForeColor = Color.Black;
-                flash.Start();
-                blink.Stop();
+
+                if (labelTime.ForeColor == Color.Black)
+                    labelTime.ForeColor = Color.Red;
+                else
+                    labelTime.ForeColor = Color.Black;
             }
-        }*/
+        }
     }
 }
