@@ -57,7 +57,7 @@ namespace Timer
                 --totalMinutesF2;
                 
                 timer.Stop();
-                
+                blink.Stop();
                 labelTime.Text = "Time is up!";
                 SystemSounds.Exclamation.Play();
 
@@ -69,7 +69,7 @@ namespace Timer
         private void flash_Tick(object sender, EventArgs e)
         {
             /*
-            if (totalMinutesF2 <= 5)
+            if (totalMinutesF2 ==0 )
             {
                 Random random = new Random();
                 int a = random.Next(0, 255);
@@ -78,8 +78,8 @@ namespace Timer
 
                 labelTime.ForeColor = System.Drawing.Color.FromArgb(a, b, c);
 
-            }
-            */
+            }*/
+            
         }
 
         private void blink_Tick(object sender, EventArgs e)
